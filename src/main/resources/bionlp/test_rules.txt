@@ -1,0 +1,5 @@
+  ENV.defaults["ruleType"] = "tokens"
+  ENV.defaultResultAnnotationKey = "tokens"
+
+  { pattern: (/interested/ /.*/ /salmon/),
+    result: "FISH" }

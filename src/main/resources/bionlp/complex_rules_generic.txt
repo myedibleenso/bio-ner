@@ -1,0 +1,10 @@
+# find a sequence of LETTERNUM nouns that optionally include a hyphen-separated repetition
+#( /kinase|phospho.*|gamma/? [ { word:/([\:\/\-]?[A-Z]{1,5}[0-9]+)+/ } & { tag:/NN/ } ] /complex/? )	PROT_COMP=UNKNOWN
+( [ {word:/[A-Z]+([0-9]+[A-Z]*[\:\-\/]?)+/ } & { tag:/NN/ } ] ( /or|and|\,/ [ {word:/[A-Z]+([0-9\-\:\/A-Z]+)+/ } & { tag:/NN/ } ] )* /complex/? )	PROT_COMP=UNKNOWN
+
+# TODO
+# write rule to match "CDK6-cyclin"
+# write rule to match things like "p21cip and p27cip"
+# write rule to match "CDK4- and CDK6-cyclin"
+# write rule to match "c-neu/ERBB-2-induced"
+# write rule to match "c-neu/ERBB-2-dependent"
